@@ -1,0 +1,6 @@
+---
+- name: Default Playbook Linux - Starting
+  hosts: linux_vms
+  become: yes
+  roles:
+    - linux

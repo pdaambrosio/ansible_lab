@@ -1,0 +1,5 @@
+[test_containers]
+172.17.0.2
+
+[linux_vms]
+192.168.15.136

@@ -1,0 +1,81 @@
+---
+# default linux packages Redhat like
+- name: update SO Debian like
+  apt: name=* state=latest autoclean=yes clean=yes install_recommends=yes
+  when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
+
+- name: install packages Debian
+  apt:
+    name: "{{ item }}"
+    state: latest
+  with_items: 
+  - "{{ packages }}"
+  notify: Restart nginx
+  when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
+
+- name: Create user accounts
+  user:
+    name: "{{ item }}"
+    generate_ssh_key: yes
+    ssh_key_bits: 2048
+    ssh_key_file: /home/{{ item }}/.ssh/{{ item }}_id_rsa
+    state: present
+    force: no
+  with_items: 
+  - "{{ users }}"
+  register: public_key
+
+- debug:
+    var: public_key.results.{{ item }}.ssh_public_key
+  with_sequence: start=0 end={{ public_key.results|length - 1 }}
+  register: keys
+
+- local_action: copy content={{ keys }} dest=//home/kali-user/courses_projects/ansibleLab/keys
+  become: false
+
+# default linux packages Redhat like
+- name: update SO Redhat like
+  yum: name=* state=latest autoremove=yes
+  when: ansible_distribution == 'RedHat' or ansible_distribution == 'Centos'
+
+- name: clean cache yum
+  command: yum clean all
+  when: ansible_distribution == 'RedHat' or ansible_distribution == 'Centos'
+
+# default linux setup
+- name: Timezone config
+  file: src=/usr/share/zoneinfo/America/Sao_Paulo dest=/etc/localtime state=link force=yes
+  
+# - name: Copy Template
+#   template: src=motd dest=/etc/motd force=yes owner=root group=root
+
+- name: remove user {{ item }} from the sudo group
+  command: "gpasswd -d {{ item }} sudo"
+  register: command_result
+  changed_when: "not 'is not a member of' in command_result.stderr"
+  failed_when: "'does not exist in /etc/group' in command_result.stderr"
+  with_items: "{{ users }}"
+
+- name: remove user {{ item }} from the root group
+  command: "gpasswd -d {{ item }} root"
+  register: command_result
+  changed_when: "not 'is not a member of' in command_result.stderr"
+  failed_when: "'does not exist in /etc/group' in command_result.stderr"
+  with_items: "{{ users }}"
+
+- name: SISOP | Add Motd
+  template: src=motd.sh dest=/etc/motd.sh force=yes owner=root group=root mode=0755
+
+- name: SISOP | Change /etc/profile
+  lineinfile: dest=/etc/profile line={{ item }}
+  with_items:
+    - '#--- Default export & Alias ---#'
+    - 'export HISTTIMEFORMAT="%d/%m/%Y - %H:%M:%S - "'
+    - 'export HISTSIZE="5000"'
+    - 'export HISTFILESIZE="5000"'
+    - 'export TERM=linux'
+    - 'alias ls="ls -lh --color"'
+    - 'alias grep="grep --color"'
+    - 'alias vi="vim"'
+    - 'alias rm="rm -i"'
+    - '/etc/motd.sh'

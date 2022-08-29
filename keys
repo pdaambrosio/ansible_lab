@@ -1,0 +1,42 @@
+{
+    "results": [
+        {
+            "public_key.results.0.ssh_public_key": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDaRInIWcd8MbdYVDuGOnEwcFlEt83SvgC1a1z/jTVgHDts0E8YHNN9+ifgQgFQmcEXJrfzrMp35b6NsVHOq9GJjnK3HNpnCnEk+Py2b/aBUadk8wwKXLwZ5kCI+vcasYtFnlSxykWneACmTFFjbgD6vsxn7S1+G9mfEicthGwXYtMXhj+xjFvUAr0w3G985//AUrK/+I9BB31UtQpf+BJRwgVOa2oiZ1gIacT7yhK4S9TyruTChM7O4cvEyt9I/xHfEreR08iG7K+rZUjk6j+DBYpeA7uTKRJykIBbvIDl7X2KaFHTA1VH30jyPLl5clxTnj6UassFLUoqIKpcuL/5 ansible-generated on debian",
+            "failed": false,
+            "changed": false,
+            "item": "0",
+            "ansible_loop_var": "item"
+        },
+        {
+            "public_key.results.1.ssh_public_key": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDSC5heDVn4rHF52DfgJfVrTY0xo2xh8/aUenU9uK5lOkqi+YYUKlS0iU1BPDjSXBdxGg51iL4TJXihur14Q3gClfj/1XC1iqVe1JwuWxQqmGdo8n1P7BTlgzSXLFWPqKx0g197fsZi6WdYF9iOMYQx9qSKPSemMlXzFfDnv46oXL4jE2k7zx5otYRxz5YH1nHigAWgQeXVbp0m9HBd8miEyTeGPQu8zMtMMwaaLeksDcn073gMBVccMQZCSrCCEw0jtYIDtA9FBJlI4Spsn+82Oz0GNgL/VhE/CM1BZ1dCe+7+Eyd2Ukz7yI48RonYDIzgf2c7mf4bIN0ASp5vUAlZ ansible-generated on debian",
+            "failed": false,
+            "changed": false,
+            "item": "1",
+            "ansible_loop_var": "item"
+        },
+        {
+            "public_key.results.2.ssh_public_key": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQD4y0CEENTqOQmu6Of0vp/PClHMJte2ZIkx8tAYponZoIlYF5aodlx6wirsqp5//A4Os6JRuhDUNNTsJ96GhlmTtZsh96B0VfxVYWRCIS5GBkN1WwfzN3HHNAZc7GNNjwjISlTaxYvnoqVS2aU9fxPKnVy/q2sqFutTqFKchX1TVb4IjX3/s2Eu/Ypl83cfm0uv20rwK0Y8K+PiXShY9a1OwaXVdA4Z5xDxcF4fHkkyVWwcb7U/CxpDAtz7uVNE+Eli6WpFqiISNlnDND9vurqgG/JPQoqwW/W2f3zifaMWQ58o+ME2+c9fF4NPd1OfWmOuWypC1G6x+sdvUBasVIQn ansible-generated on debian",
+            "failed": false,
+            "changed": false,
+            "item": "2",
+            "ansible_loop_var": "item"
+        },
+        {
+            "public_key.results.3.ssh_public_key": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDV86aXio7cyQfAYN77FBRT5NemU/glAbK2mGAil8ti7rOQIBxIsbUPIZnrwItHI1Sr2v3G5u1OkJ0gzD4A/h/nf+NVJc2H6bYbBIXrFQKm3TiGqudNAOUew1Pxxxym8O7SOprAUXOsKovh9ymghwX06EmiyEn93GZ6nc7JrFtqEN9Z++zcjBXHLA37PXjeQS5gdfK0DwH0FPXPuohX9HB0YJ+6zPyJOjs8s0bNNLTYcNWGX3iLrD4BhAZwBI1tqsCi9j0w/oG6uHKWL+2V1ivo0/RtvpAHqAwQjhwwhdOkCJlkBWKUsRrAh6+1Go2lVxyIDliNXuW3XBDmz0fV7S9X ansible-generated on debian",
+            "failed": false,
+            "changed": false,
+            "item": "3",
+            "ansible_loop_var": "item"
+        },
+        {
+            "public_key.results.4.ssh_public_key": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDnclN00W6I5+cY/p3PqjdeEKkFMfD8GRjnIF2AjO1Lvfab+d1KlxbP4XEuJ4dW3cjObBktMGjNFq/pP5/4u//3UYIwxFyq22Ar5MysCj3KMbQRRgf3wXWn5nKp0N44zm+F5D44vaWn/J90OttWqiUJy2z82A15aIbBGed7MfFht9gtbq+JBsAvuCg3eDTacWn3X8mRWYJK8QFYILk9YBJ6qcGMzUVnwVuQzXiTuQDuchcIE/QRHa8fbGUQt6hPbOj6exUcnEXvUCgp8C5PPSLvT3YlYiiyfFH3EUdlO1A9sC0AjXWwhMEWgJbIwTNY0va5IPQFBR5eGOFuoiPI7wMB ansible-generated on debian",
+            "failed": false,
+            "changed": false,
+            "item": "4",
+            "ansible_loop_var": "item"
+        }
+    ],
+    "skipped": false,
+    "msg": "All items completed",
+    "changed": false
+}
