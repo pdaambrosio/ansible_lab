@@ -45,9 +45,6 @@
 # default linux setup
 - name: Timezone config
   file: src=/usr/share/zoneinfo/America/Sao_Paulo dest=/etc/localtime state=link force=yes
-  
-# - name: Copy Template
-#   template: src=motd dest=/etc/motd force=yes owner=root group=root
 
 - name: remove user {{ item }} from the sudo group
   command: "gpasswd -d {{ item }} sudo"
@@ -63,10 +60,10 @@
   failed_when: "'does not exist in /etc/group' in command_result.stderr"
   with_items: "{{ users }}"
 
-- name: SISOP | Add Motd
+- name: Add Motd
   template: src=motd.sh dest=/etc/motd.sh force=yes owner=root group=root mode=0755
 
-- name: SISOP | Change /etc/profile
+- name: Change /etc/profile
   lineinfile: dest=/etc/profile line={{ item }}
   with_items:
     - '#--- Default export & Alias ---#'
