@@ -30,7 +30,7 @@
   with_sequence: start=0 end={{ public_key.results|length - 1 }}
   register: keys
 
-- local_action: copy content={{ keys }} dest=//home/kali-user/courses_projects/ansibleLab/keys
+- local_action: copy content={{ keys }} dest=//home/kali-user/courses_projects/ansible_lab/keys
   become: false
 
 # default linux packages Redhat like
